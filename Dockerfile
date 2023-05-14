@@ -8,6 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Like opening a terminal session and running installing our dependencies
+# Shell form
 RUN npm install
 
 # After installing dependencies, now we can copy all our source code in local files to working directory
@@ -23,4 +24,5 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Can only have one of these PER docker file and it tells the container how to run the actual application
+# Exec form, array of strings
 CMD ["npm", "start"]
